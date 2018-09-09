@@ -10,7 +10,12 @@ const argv = yargs.argv;
 const command = argv._[0];
 
 if(command === 'add'){
-  notes.addNote(argv.title, argv.body);
+  let note = notes.addNote(argv.title, argv.body);
+  if(note){
+    console.log("Note Saved Successfully");
+  }else{
+    console.log("Note title already exist");
+  }
 }else if (command === 'list'){
   notes.getAll();
 }else if (command === 'read'){
