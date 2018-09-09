@@ -1,0 +1,22 @@
+{
+  "name": "node_note_app",
+  "version": "1.0.0",
+  "description": "A command line base notes taking app in node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akash187/Node_Note_App.git"
+  },
+  "author": "Akash Kumar Seth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Akash187/Node_Note_App/issues"
+  },
+  "homepage": "https://github.com/Akash187/Node_Note_App#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
