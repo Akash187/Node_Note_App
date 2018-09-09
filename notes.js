@@ -1,6 +1,7 @@
 console.log('Starting notes.js');
 
 const fs = require('fs');
+const _ = require('lodash');
 
 let fetchNotes = () => {
   try {
@@ -39,7 +40,14 @@ let getNote = (title) => {
 };
 
 let removeNote = (title) => {
-  console.log('Removing note', title);
+  let notes = fetchNotes();
+  let filteredNotes = notes.filter((note) => note.title !== title);
+  if(filteredNotes.length !== notes.length){
+    saveNotes(filteredNotes);
+    return 'Note Removed Successfully.'
+  }else{
+    return `Note with title "${title}" does not exist.`;
+  }
 };
 
 module.exports = {
