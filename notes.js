@@ -42,12 +42,8 @@ let getNote = (title) => {
 let removeNote = (title) => {
   let notes = fetchNotes();
   let filteredNotes = notes.filter((note) => note.title !== title);
-  if(filteredNotes.length !== notes.length){
-    saveNotes(filteredNotes);
-    return 'Note Removed Successfully.'
-  }else{
-    return `Note with title "${title}" does not exist.`;
-  }
+  saveNotes(filteredNotes);
+  return filteredNotes.length !== notes.length;
 };
 
 module.exports = {

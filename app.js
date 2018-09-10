@@ -22,7 +22,11 @@ if(command === 'add'){
   notes.getNote(argv.title);
 }else if (command === 'remove'){
   let result = notes.removeNote(argv.title);
-  console.log(result);
+  if(result){
+    console.log('Note Removed Successfully.');
+  }else{
+    console.log(`Note with title does not exist.`);
+  }
 }else{
   console.log('command not recognized');
 }
