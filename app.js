@@ -1,5 +1,3 @@
-console.log("Starting app.js");
-
 const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
@@ -18,7 +16,9 @@ if(command === 'add'){
     console.log("Note title already exist");
   }
 }else if (command === 'list'){
-  notes.getAll();
+  let allNotes = notes.getAll();
+  console.log(`Listing ${allNotes.length} Notes`);
+  allNotes.map((note) => notes.logNote(note));
 }else if (command === 'read'){
   let note = notes.getNote(argv.title);
   if(note){
